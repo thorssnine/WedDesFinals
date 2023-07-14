@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>PLDT Home</title>
+    <link rel="icon" href="https://companieslogo.com/img/orig/PHI-fc6400c0.png?t=1635525872" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+        function about() {
+            window.location = "About.html";
+        }
+    </script>
+    <script type="text/javascript">
+        function products() {
+            window.location = "Products.html";
+        }
+    </script>
+    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link href="https://cdn.jsdeliver.net/npm/remixcon@2.5.0/fonts/remixcon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="StyleSheet.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="pad">
+                <a href="Index.html"><img class="img1" src="https://companieslogo.com/img/orig/PHI-fc6400c0.png?t=1635525872" alt="PLDT Logo"></a>
+                <h5 id="Title"><b>PLDT Home</b></h5>
+            </div>
+            </div>
+            <section class="nav-menu">
+                        <div class="nav-bar">
+                                <ul class="ul1">
+                                    <li class="l1"><a href="Products.html">Products</a></li>
+                                    <li class="l1"><a href="About.html">About</a></li>
+                                    <li class="l1"><a href="Index.html">Home</a></li>
+                                </ul>
+                        </div>
+                <i class="uil uil-bars navOpenBttn"></i>
+                <ul class="log">
+                    <li class="uil uil-times navCloseBttn"></li>
+                    <li class="l2"><a href="Index.html">Home</a></li>
+                    <li class="l2"><a href="About.html">About</a></li>
+                    <li class="l2"><a href="Products.html">Products</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                    <div class="search">
+                        <form>
+                            <div class="search-ic">
+                                <i class="uil uil-search search-icon" id="searchIcon"></i>
+                            </div>
+                            <div class="search-box">
+                                <input type="search" id="search-bar" placeholder="Search..." />
+                                <i class="uil uil-search search-icon"></i>
+                            </div>
+                        </form>
+                    </div>
+            </section>    
+    </header>
+    <main>
+        <section class="slideshow">
+            <div class="slide-wrapper">
+                <div class="arrow l" onclick="prev()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png" alt="left" />
+                </div>
+                <div class="slide slider-1">
+                    <div class="caption">
+                        <h3>Know More About Us</h3>
+                        <input type="button" id="link" value="About Us" onclick="about();" />
+                    </div>
+                </div>
+                <div class="slide slider-2">
+                    <div class="caption">
+                        <h3>Products We Offer</h3>
+                        <input type="button" id="link" value="SEE ALL PRODUCTS" onclick="products();" />
+                    </div>
+                </div>
+                <div class="arrow r" onclick="next();">
+                    <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="right" />
+                </div>
+            </div>
+            
+            <script>
+                let slide = document.querySelectorAll('.slide');
+                var current = 0;
+
+                function cls() {
+                    for (let i = 0; i < slide.length; i++) {
+                        slide[i].style.display = 'none';
+                    }
+                }
+
+                function next() {
+                    cls();
+                    if (current === slide.length - 1) current = -1;
+                    current++;
+
+                    slide[current].style.display = 'block';
+                    slide[current].style.opacity = 0.4;
+
+                    var x = 0.4;
+                    var intX = setInterval(function (){
+                        x += 0.1;
+                        slide[current].style.opacity = x;
+                        if (x >= 1) {
+                            clearInterval(intX);
+                            x = 0.4;
+                        }
+                    }, 100);
+                }
+
+                function prev() {
+                    cls();
+                    if (current === slide.length - 1) current = -1;
+                    current++;
+
+                    slide[current].style.display = 'block';
+                    slide[current].style.opacity = 0.4;
+
+                    var x = 0.4;
+                    var intX = setInterval(function () {
+                        x += 0.1;
+                        slide[current].style.opacity = x;
+                        if (x >= 1) {
+                            clearInterval(intX);
+                            x = 0.4;
+                        }
+                    }, 100);
+                }
+
+                function start() {
+                    cls();
+                    slide[current].style.display = 'block';
+                }
+
+                start();
+            </script>
+
+        </section>
+        <section class="who">
+            <div class="container4">
+                <h2>WHO ARE WE</h2>
+                <p>
+                    We are the leading and most diversified telecommunications group <br />
+                    in the Philippines. In the midst of massive technology changes, we <br />
+                    remain focused on our commitment to serve the nation and deliver <br />
+                    the best communications and digital solutions to Filipinos.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container6">
+            <p>Copyright &copy; 2023 PLDT Home</p>
+            <ul class="terms">
+                <li>Terms of Service</li>
+                <li>Privacy Policy</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
